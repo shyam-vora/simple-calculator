@@ -20,6 +20,11 @@
         div{
             margin-top: 100px;
         }
+        .button1{
+            height: 50px;
+            width: 125px;
+            font-size: 35px;
+        }
     </style>
 </head>
 <body>
@@ -28,7 +33,6 @@
     <table border="5" style="background-color: floralwhite;">
             
         <tr><input type="text" style="margin-bottom: 5px; height: 15px;;" size="43" class="output"></tr>
-        
         <tr>
             <td><input type="button" value="c" class="button" onclick="del()" style="color: red;"></td>
             <td><input type="button" value="%"  onclick="input('%')" class="button"></td>
@@ -51,7 +55,12 @@
             <td><input type="button" value="1" onclick="input('1')" class="button"></td>
             <td><input type="button" value="2" onclick="input('2')" class="button"></td>
             <td><input type="button" value="3"  onclick="input('3')"class="button"></td>
-            <td><input type="button" value="=" onclick="ans()" class="button"></td>
+            <td><input type="button" value="."  onclick="input('.')"class="button"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0"  onclick="input('0')"class="button"></td>
+            <td><input type="button" value="00"  onclick="input('00')"class="button"></td>
+            <td colspan="2"><input type="button" value="=" onclick="ans()" class="button1"></td>
         </tr>
     </table>
     </div>
