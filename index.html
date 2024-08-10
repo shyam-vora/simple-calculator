@@ -2,25 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO-DO list</title>
-    <link rel="stylesheet" href="style.css">
+    <title>calcultor</title>
+    <style>
+        table{
+            padding: 10px;
+        }
+        table td{
+            padding: 10px;
+        }
+        .button{
+            height: 50px;
+            width: 50px;
+            font-size: 35px;
+        }
+        div{
+            margin-top: 100px;
+        }
+        .button1{
+            height: 50px;
+            width: 125px;
+            font-size: 35px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="todo-app">
-            <h2>TO-DO List <img src="images/icon.png"> </h2>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="Add Your text">
-                <button onclick="addtask()">Add</button>
-            </div>
-            <ul id="list-container">
-                <!-- <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li> -->
-            </ul>
-        </div>
+    <center>
+        <div>
+    <table border="5" styhyale="background-color: floralwhite;">
+            
+        <tr><input type="text" style="margin-bottom: 5px; height: 15px;;" size="43" class="output"></tr>
+        <tr>
+            <td><input type="button" value="c" class="button" onclick="del()" style="color: red;"></td>
+            <td><input type="button" value="%"  onclick="input('%')" class="button"></td>
+            <td><input type="button" value="/" onclick="input('/')"  class="button"></td>
+            <td><input type="button" value="+"  onclick="input('+')" class="button"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="input('7')" class="button"></td>
+            <td><input type="button" value="8" onclick="input('8')" class="button"></td>
+            <td><input type="button" value="9" onclick="input('9')" class="button"></td>
+            <td><input type="button" value="*" onclick="input('*')" class="button"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="input('4')" class="button"></td>
+            <td><input type="button" value="5" onclick="input('5')" class="button"></td>
+            <td><input type="button" value="6" onclick="input('6')" class="button"></td>
+            <td><input type="button" value="-" onclick="input('-')" class="button"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="input('1')" class="button"></td>
+            <td><input type="button" value="2" onclick="input('2')" class="button"></td>
+            <td><input type="button" value="3"  onclick="input('3')"class="button"></td>
+            <td><input type="button" value="."  onclick="input('.')"class="button"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0"  onclick="input('0')"class="button"></td>
+            <td><input type="button" value="00"  onclick="input('00')"class="button"></td>
+            <td colspan="2"><input type="button" value="=" onclick="ans()" class="button1"></td>
+        </tr>
+    </table>
     </div>
-    <script src="script.js"></script>
+    </center>
+    <script>
+        var button=document.getElementsByClassName('.button')
+        var output=document.getElementsByClassName('.output').value
+        function del()
+        {
+            var output=document.querySelector('.output').value
+            document.querySelector('.output').value=''
+        }
+        function input(b)
+        {
+            var a=document.querySelector('.button').value
+            document.querySelector('.output').value+=b
+        } 
+        function ans()
+        {
+            var d=document.querySelector('.output').value
+            var c=eval(d)
+            document.querySelector('.output').value = c
+        }
+    </script>
 </body>
 </html>
